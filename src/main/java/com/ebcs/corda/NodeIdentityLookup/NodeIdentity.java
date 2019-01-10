@@ -25,4 +25,16 @@ public class NodeIdentity {
     public String getNickname() {
         return nickname;
     }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setCordaX500Name(String cordaX500Name) {
+        this.cordaX500Name = cordaX500Name;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
 }
