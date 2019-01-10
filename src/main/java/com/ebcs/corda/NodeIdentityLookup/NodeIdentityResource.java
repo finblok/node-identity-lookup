@@ -30,6 +30,10 @@ public class NodeIdentityResource {
         return nodeIdentityRepository.findFirstByCordaX500Name(x500name);
     }
 
+    @GetMapping("/node/nickname/{x500name}")
+    public String getNodeNickname(@PathVariable String x500name) {
+        return nodeIdentityRepository.findFirstByCordaX500Name(x500name).getNickname();
+    }
 
 
 }
