@@ -14,4 +14,15 @@ public class NodeIdentity {
 
     private String nickname;
 
+    public Long getId() {
+        return id;
+    }
+
+    public String getCordaX500Name() {
+        return cordaX500Name;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
 }
