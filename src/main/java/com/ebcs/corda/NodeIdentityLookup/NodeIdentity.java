@@ -1,5 +1,6 @@
 package com.ebcs.corda.NodeIdentityLookup;
 
+import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,6 +14,9 @@ public class NodeIdentity {
     private String cordaX500Name;
 
     private String nickname;
+
+    @Column(name="is_parent_company")
+    private Boolean isParentCompany;
 
     public Long getId() {
         return id;
@@ -36,5 +40,13 @@ public class NodeIdentity {
 
     public void setNickname(String nickname) {
         this.nickname = nickname;
+    }
+
+    public Boolean getParentCompany() {
+        return isParentCompany;
+    }
+
+    public void setParentCompany(Boolean parentCompany) {
+        isParentCompany = parentCompany;
     }
 }
