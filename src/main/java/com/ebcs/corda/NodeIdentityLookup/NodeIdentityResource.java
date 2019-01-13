@@ -36,14 +36,14 @@ public class NodeIdentityResource {
     }
 
     @GetMapping("/node/nickname/new/{x500name}/{newName}")
-    public String getNodeNickname(@PathVariable String x500name, @PathVariable String newName) {
+    public NodeIdentity setNodeNickname(@PathVariable String x500name, @PathVariable String newName) {
 
         NodeIdentity nodeIdentity = nodeIdentityRepository.findFirstByCordaX500Name(x500name);
         nodeIdentity.setNickname(newName);
 
         nodeIdentityRepository.save(nodeIdentity);
 
-        return nodeIdentityRepository.findFirstByCordaX500Name(x500name).getNickname();
+        return nodeIdentityRepository.findFirstByCordaX500Name(x500name);
     }
 
 }

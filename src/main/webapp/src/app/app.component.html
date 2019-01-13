@@ -1,0 +1,41 @@
+<br/>
+
+<div class="container">
+  <h1>Valkyrie Corda Node Identities</h1>
+  <p class="lead">Change the display nicknames for the Corda nodes.</p>
+  <hr/>
+
+  <ng-container *ngIf="!loaded">
+    <div class="text-center">
+      <p class="lead">Loading..</p>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="loaded">
+    <ng-container *ngFor="let node of nodes">
+      <div class="card">
+        <!--<div class="card-header">-->
+          <!--{{node.cordaX500Name}}-->
+        <!--</div>-->
+        <div class="card-body">
+          <h4>Nickname: {{node.nickname}}</h4>
+          <h6>Corda Identity: {{node.cordaX500Name}}</h6>
+          <span *ngIf="node.parentCompany" class="text-primary">Parent Company</span>
+          <span *ngIf="!node.parentCompany" class="text-muted">Subsidiary</span>
+          <br/><br/>
+
+          <div class="form-inline">
+
+            <input class="form-control ml-2"
+                   placeholder="Enter new nickname.."
+                  [(ngModel)]="node.newNickname"/>
+            <button class="btn btn-primary ml-2"
+              (click)="updateNickname(node, node.newNickname)">Update Nickname</button>
+          </div>
+
+        </div>
+      </div><br/>
+    </ng-container>
+  </ng-container>
+</div>
+<br/>
