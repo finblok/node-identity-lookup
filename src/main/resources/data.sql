@@ -1,5 +1,5 @@
 insert into node_identity(id, cordaX500Name, nickname, is_parent_company)
-values(1, 'O=PartyA, L=London, C=GB', 'Verizon Wireless', TRUE );
+values(1, 'O=ParentCompany, L=London, C=GB', 'Verizon Wireless', TRUE );
 
 insert into node_identity(id, cordaX500Name, nickname, is_parent_company)
 values(2, 'O=PartyB, L=London, C=GB', 'T-Mobile', FALSE );
